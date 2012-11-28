@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 from sys import stdin
-from Adafruit_PWM_Servo_Driver import PWM
+from lib.Adafruit_PWM_Servo_Driver import PWM
 import time
 import re
 
