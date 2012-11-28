@@ -4,7 +4,7 @@ import re
 s = re.compile('[ :]')
 
 class Event:
-    def initialize(self,key,value,old_value):
+    def __init__(self,key,value,old_value):
         self.key = key
         self.value = value
         self.old_value = old_value
