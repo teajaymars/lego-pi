@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-from sys import stdin
 from lib.Adafruit_PWM_Servo_Driver import PWM
 import time
 import re
@@ -31,6 +30,7 @@ def deadzone(x, deadzone):
 
 
 pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
+for event in xbox_read.event_stream():
 while (True):
     line = stdin.readline()
     if not line:

@@ -13,7 +13,12 @@ class Event:
     def __str__(self):
         return 'Event(%s,%d,%d)' % (self.key,self.value,self.old_value)
 
-def event_stream():
+def apply_deadzone(x, deadzone, scale):
+    if x < 0:
+        return (scale * min(0,x+deadzone)) / (32768-deadzone)
+    return (scale * max(0,x-deadzone)) / (32768-deadzone)
+
+def event_stream(deadzone=0,scale=32768):
     _data = None
     while (True):
         line = stdin.readline()
@@ -27,6 +32,8 @@ def event_stream():
                 _data = data
                 continue
             for key in data:
+                if key=='X1' or key=='X2' or key=='Y1' or key=='Y2':
+                    data[key] = apply_deadzone(data[key],deadzone,scale)
                 if data[key]==_data[key]: continue
                 event = Event(key,data[key],_data[key])
                 yield event
