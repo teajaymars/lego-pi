@@ -3,6 +3,16 @@ import re
 
 s = re.compile('[ :]')
 
+class Event:
+    def initialize(self,key,value,old_value):
+        self.key = key
+        self.value = value
+        self.old_value = old_value
+    def is_press(self):
+        return self.value==1 and self.old_value==0
+    def __str__(self):
+        return 'Event(%s,%d,%d)' % (self.key,self.value,self.old_value)
+
 def event_stream():
     _data = None
     while (True):
@@ -18,7 +28,7 @@ def event_stream():
                 continue
             for key in data:
                 if data[key]==_data[key]: continue
-                event = (key,data[key],_data[key])
+                event = Event(key,data[key],_data[key])
                 yield event
             _data = data
 
