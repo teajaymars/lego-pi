@@ -22,7 +22,7 @@ def setDirection(new_direction):
     if direction:
         GPIO.output(direction,False)
     GPIO.output(new_direction,True)
-    direction = new_dircetion
+    direction = new_direction
 
 setDirection(FORWARD)
 
