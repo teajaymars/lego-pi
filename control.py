@@ -37,6 +37,7 @@ pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
 
 rt_intensity = 0
 lt_intensity = 0
+steer = servoMid
 
 for event in xbox_read.event_stream(deadzone=12000):
     # Triggers control speed
@@ -57,3 +58,7 @@ for event in xbox_read.event_stream(deadzone=12000):
     if event.key=='X1':
         steer = int( servoMid + (servoW*event.value)/32768 )
         pwm.setPWM(15, 0, steer)
+    if event.key=='Y' and event.is_press():
+        servoMid = steer
+        print 'Calibrate steering around %d' % steer
+        
