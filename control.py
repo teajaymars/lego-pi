@@ -10,7 +10,7 @@ pwm = PWM(0x40, debug=True)
 
 # Initialise the GPIO output channels
 GPIO.setmode(GPIO.BCM)
-FOWARD = 17
+FORWARD = 17
 BACKWARD = 21
 GPIO.setup(FORWARD, GPIO.OUT)
 GPIO.setup(BACKWARD, GPIO.OUT)
