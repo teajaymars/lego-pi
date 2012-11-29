@@ -3,5 +3,8 @@
 modprobe i2c-dev
 modprobe i2c-bcm2708
 
-python control.py
+# Get my directory
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+python $DIR/control.py
 
