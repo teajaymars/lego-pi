@@ -27,7 +27,7 @@ def setDirection(new_direction):
 setDirection(FORWARD)
 
 # Default calibration values 
-servoMid = 420
+servoMid = 425
 servoW = 180
 
 pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
