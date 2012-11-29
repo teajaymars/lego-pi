@@ -24,6 +24,8 @@ def event_stream(deadzone=0,scale=32768):
     subprocess = popen('nohup xboxdrv','r',65536)
     while (True):
         line = subprocess.readline()
+        if 'Error' in line:
+            raise ValueError(line)
         data = filter(bool,s.split(line[:-1]))
         if len(data)==42:
             # Break input string into a data dict
