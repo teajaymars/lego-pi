@@ -1,3 +1,4 @@
+from os import popen
 from sys import stdin
 import re
 
@@ -20,10 +21,9 @@ def apply_deadzone(x, deadzone, scale):
 
 def event_stream(deadzone=0,scale=32768):
     _data = None
+    subprocess = popen('nohup xboxdrv','r',65536)
     while (True):
-        line = stdin.readline()
-        if not line:
-            continue
+        line = subprocess.readline()
         data = filter(bool,s.split(line[:-1]))
         if len(data)==42:
             # Break input string into a data dict
