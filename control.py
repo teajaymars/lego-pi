@@ -26,12 +26,9 @@ def setDirection(new_direction):
 
 setDirection(FORWARD)
 
-
-servoMin = 150  # Min pulse length out of 4096
-servoMax = 600  # Max pulse length out of 4096
-servoMid = (servoMax + servoMin) / 2
-servoW = (servoMax - servoMin) / 2
-servoW *= .8
+# Default calibration values 
+servoMid = 420
+servoW = 180
 
 pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
 
