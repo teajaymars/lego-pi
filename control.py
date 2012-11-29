@@ -46,10 +46,10 @@ for event in xbox_read.event_stream(deadzone=12000):
         else:
             lt_intensity = event.value
         # Change direction outputs when one trigger is pulled harder than the other
-        new_direction = FORWARD if rt_intensity>lt_intensity else BACKWARD
+        new_direction = FORWARD if rt_intensity>=lt_intensity else BACKWARD
         if not direction==new_direction:
             print 'set direction: %s' % {FORWARD:'FORWARD',BACKWARD:'BACKWARD'}[new_direction]
-            set_direction(new_direction)
+            setDirection(new_direction)
         intensity = max(rt_intensity,lt_intensity) * 16
         pwm.setPWM(0, 0, intensity)
         print 'set speed: %d' % intensity
