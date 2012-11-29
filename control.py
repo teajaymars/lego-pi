@@ -18,6 +18,7 @@ direction = None
 
 # Setup direction of travel
 def setDirection(new_direction):
+    global direction # One global property, cut me some slack
     if direction:
         GPIO.output(direction,False)
     GPIO.output(new_direction,True)
