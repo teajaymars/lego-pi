@@ -28,7 +28,7 @@ setDirection(FORWARD)
 
 # Default calibration values 
 servoMid = 425
-servoW = 180
+servoWidth = 180
 
 pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
 
@@ -53,7 +53,7 @@ for event in xbox_read.event_stream(deadzone=12000):
         print 'set speed: %d' % intensity
     # Left thumbstick controls the steering
     if event.key=='X1':
-        steer = int( servoMid + (servoW*-event.value)/32768 )
+        steer = int( servoMid + (servoWidth*-event.value)/32768 )
         pwm.setPWM(1, 0, steer)
     if event.key=='Y' and event.is_press():
         servoMid = steer
