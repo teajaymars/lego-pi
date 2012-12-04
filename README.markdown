@@ -15,7 +15,7 @@ Reads `Event` objects from the Xbox controller, and updates the GPIO/I2C outputs
 
 #### `lib/xbox_read.py`
 
-Wrapper around `xboxdrv` driver. Reads from the controller and emits `Event` objects, which have a `key` (`A`, `X1`, or other controller button) and a `value` (`0` or `1` for buttons. `0` to `256 for triggers. `-32767` to `32768` for thumbsticks.
+Wrapper around `xboxdrv` driver. Reads from the controller and emits `Event` objects, which have a `key` (`A`, `X1`, or other controller button) and a `value` (`0` or `1` for buttons. `0` to `256` for triggers. `-32767` to `32768` for thumbsticks.
 
 
 
