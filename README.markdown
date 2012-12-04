@@ -1,7 +1,7 @@
 This repository is attached to my Lego + Raspberry Pi + Xbox Controller project. 
 
  * Read the [full article](http://blog.zephod.com/post/37120089376/lego-xbox-raspberry-pi) on my blog.
- * Watch it [in action](http://www.youtube.com/watch?feature=player_embedded&v=iXMqMbT9AQs) on YouTube.
+ * Watch it [in action](http://www.youtube.com/watch?feature=player_embedded&v=X7YRqCCBDBU) on YouTube.
 
 ## Overview
 
